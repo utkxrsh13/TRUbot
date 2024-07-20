@@ -1,0 +1,34 @@
+.main-cont .greet span{
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main-cont{
+  max-width: 900px;
+  margin: auto;
+}
+.main-bottom{
+  max-width: 900px;
+}
+.main .card{
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 15px;
+  padding: 20px;
+}
+.main .card p{
+  color: black;
+  font-weight: 600;
+}
+.result::-webkit-scrollbar{
+  display: none;
+}
+.main-cont .greet p{
+  background: -webkit-linear-gradient(16deg, #c15925, #3fd3da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.main .nav p{
+  background: -webkit-linear-gradient(16deg, #530aff, #ff9100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
