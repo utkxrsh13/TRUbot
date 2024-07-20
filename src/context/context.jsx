@@ -86,12 +86,12 @@ const handlethemeswitch= ()=>{
       loading,
       result,
       input,
+      theme,
       setPrevPromt,
       onsent,
       setrecentPrompt,
       setinput,
       newchat, 
-      theme,
       setTheme,
       handlethemeswitch
   }
