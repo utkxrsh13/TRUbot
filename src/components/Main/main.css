@@ -16,19 +16,24 @@
   padding: 20px;
 }
 .main .card p{
-  color: black;
   font-weight: 600;
 }
 .result::-webkit-scrollbar{
   display: none;
 }
-.main-cont .greet p{
+/* .main-cont .greet p{
   background: -webkit-linear-gradient(16deg, #c15925, #3fd3da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
 .main .nav p{
   background: -webkit-linear-gradient(16deg, #530aff, #ff9100);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+@media screen and (max-width: 600px) {
+  .main-cont .greet p{
+    font-size: 30px;
+    line-height: 30px;
+  }
 }

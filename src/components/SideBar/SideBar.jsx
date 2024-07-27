@@ -21,7 +21,7 @@ function SideBar() {
   }
 
   return (
-    <div className='sidebar px-4 py-6 min-h-[100vh] inline-flex flex-col justify-between bg-[#ffdffa] opacity-90 dark:bg-[#560056] dark:text-white'>
+    <div className='sidebar px-4 py-6 min-h-[100vh] inline-flex flex-col justify-between bg-[#ffdffa] opacity-90 dark:bg-[#131314] dark:text-white'>
       <div className="top">
         <IoMdMenu onClick={()=>setExtend(prev => !prev)} className='menu text-2xl block cursor-pointer'/>
         {extend?<div onClick={()=>newchat()} className="newchat inline-flex items-center gap-2 px-[5px] mt-12 py-[10px] rounded-[50px] text-white ">
@@ -44,15 +44,15 @@ function SideBar() {
         
       </div>
       {extend? <div className="bottom flex flex-col">
-        <div className="bottomItem flex items-start gap-2 pr-9 p-2 rounded-[50px] text-black cursor-pointer hover:bg-[#ffffff] dark:text-white dark:hover:bg-[#86348b]">
+        <div className="bottomItem flex items-start gap-2 pr-9 p-2 rounded-[50px] text-black cursor-pointer hover:bg-[#ffffff] dark:text-white dark:hover:bg-[#2d2d30]">
         <IoMdHelp className='text-xl'/>
           <p>Help</p>
         </div>
-        <div className="bottomItem flex items-start gap-2 pr-9 p-2 rounded-[50px] text-black cursor-pointer hover:bg-[#ffffff] dark:text-white dark:hover:bg-[#86348b]">
+        <div className="bottomItem flex items-start gap-2 pr-9 p-2 rounded-[50px] text-black cursor-pointer hover:bg-[#ffffff] dark:text-white dark:hover:bg-[#2d2d30]">
         <FaHistory className='text-xl'/>
           <p>Activity</p>
         </div>
-        <div className="bottomItem flex items-start gap-2 pr-9 p-2 rounded-[50px] text-black  cursor-pointer hover:bg-[#f8f8f8] dark:text-white dark:hover:bg-[#86348b]">
+        <div className="bottomItem flex items-start gap-2 pr-9 p-2 rounded-[50px] text-black  cursor-pointer hover:bg-[#f8f8f8] dark:text-white dark:hover:bg-[#2d2d30]">
         <MdSettingsSuggest className='text-xl'/>
           <p>Settings</p>
         </div> 

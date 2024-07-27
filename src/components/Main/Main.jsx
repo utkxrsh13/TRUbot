@@ -9,10 +9,16 @@ import { AiOutlineSend } from "react-icons/ai";
 import { Context } from "../../context/context";
 import Loader from '../Loader/Loader'
 import { IoMdArrowDropright } from "react-icons/io";
+import Theme from '../Theme/Theme'
 
 
 
 function Main() {
+  function handleSubmit(e){
+    if(e.key === "Enter"){
+      onsent();
+    }
+  }
 
   const {onsent, recentPrompt, showResult,loading,result,setinput,input, loadPrompt} = useContext(Context)
   const selected = [
@@ -40,25 +46,27 @@ function Main() {
 
 
   return (
-    <div className="main bg-[#efcce4] dark:bg-[#5e0055] flex-1 min-h-[100vh] pb-[15vh] relative text-white">
+    <div className="main bg-[#efcce4] dark:bg-[#131314] flex-1 min-h-[100vh] pb-[15vh] relative text-white">
       <div className="nav flex items-center justify-between text-xl p-2 text-[#585858]">
         <p className="font-semibold text-black dark:text-white text-2xl">TRUbot</p>
-       
+        <div className="bg-[#efcce4] dark:bg-[#131314]">
+      <Theme/>
+    </div>
       </div>
       <div className="main-cont ">
         {!showResult?<>
-          <div className="greet my-[10px] mx-0 ml-3 text-[56px] text-white font-[500] p-3">
+          <div className="greet my-[10px] mx-0 ml-3 text-[56px] text-white font-[500] p-3 leading-[50px]">
           <p>
-            <span>Hello,</span>
+            <span className="">Hello,</span>
           </p>
-          <p>How Can I help you sir...</p>
+          <p className="text-black dark:text-[#4c4e51]">How Can I help you sir...</p>
         </div>
-        <div className="card grid mb-3">
+        <div className="card grid mb-3 text-black">
        
           
             {selected.map((item, index)=>(
-              <div onClick={()=>setinput(item.select)}  className="h-[200px] p-[15px] bg-[#8eecf5] rounded-xl relative cursor-pointer hover:bg-[#99cee0] dark:bg-[#c77dff] dark:hover:bg-[#e0aaff]">
-              <p className="text-[17px]">{item.select}</p>
+              <div onClick={()=>setinput(item.select)}  className="h-[200px] p-[15px] bg-[#8eecf5] rounded-xl relative cursor-pointer hover:bg-[#99cee0] dark:bg-[#1E1F20] dark:hover:bg-[#323335]">
+              <p className="text-[17px] dark:text-white">{item.select}</p>
               {item.icon}
               
               </div>
@@ -84,7 +92,7 @@ function Main() {
         
         <div className="main-bottom absolute bottom-0 w-[100%] py-0 px-5 m-auto ">
           <div className="search flex items-center justify-between gap-1 bg-white dark:bg-black py-2 px-5 rounded-[50px]">
-            <input onChange={(e)=>setinput(e.target.value)} value={input} type="text" className="text-[18px] text-black bg-transparent border-none p-2 min-w-20 outline-none md:min-w-96 dark:text-white" size={80} placeholder="Enter a prompt here" />
+            <input onChange={(e)=>setinput(e.target.value)} onKeyDown={handleSubmit} value={input} type="text" className="text-[18px] text-black bg-transparent border-none p-2 min-w-20 outline-none md:min-w-96 dark:text-white" size={80} placeholder="Enter a prompt here" />
             <div className="flex gap-3 text-xl items-center">
               {input?<AiOutlineSend onClick={()=>onsent()} className="text-black dark:text-white cursor-pointer"/>:null}
             </div>
@@ -92,8 +100,11 @@ function Main() {
             <p className="text-[13px] my-4 mx-auto text-center font-semibold text-black dark:text-amber-500" >
               Gemini may display inaccurate info, including about people, so double-check its responses.
             </p>
+            
         </div>
+        
       </div>
+      
     </div>
   );
 }
